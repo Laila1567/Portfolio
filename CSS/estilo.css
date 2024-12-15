@@ -1,0 +1,139 @@
+/* Corpo e Fundo Animado */
+body {
+  background: linear-gradient(
+      rgb(243, 50, 195),
+      purple,
+      cyan,
+      blue,
+      rgb(243, 50, 195),
+      purple,
+      cyan,
+      blue
+  );
+  color: white;
+  background-size: 100% 600%;
+  animation: moverGradiente 10s linear infinite; /* Animação do fundo */
+  height: 100vh; /* Altura da tela cheia */
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+@keyframes moverGradiente {
+  0% { background-position: 0% 0%; }
+  100% { background-position: 0% 100%; }
+}
+
+/* Estrutura Principal */
+main {
+  max-width: 900px;
+  margin: 0 auto; /* Centraliza o conteúdo */
+  padding: 20px;
+}
+
+/* Estilização do Menu */
+.menu {
+  padding: 10px;
+  margin-bottom: 2rem;
+  background-color: rgba(0, 0, 0, 0.3); /* Fundo semitransparente */
+  border-bottom: 10px solid rgba(0, 0, 0, 0.3); /* Linha na parte inferior */
+  border-radius: 10px; /* Bordas arredondadas */
+}
+
+.menu ul {
+  list-style: none; /* Remove marcadores da lista */
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 0;
+  margin: 0;
+  flex-wrap: wrap; /* Permite que os itens do menu quebrem linha em telas menores */
+}
+
+.menu li {
+  margin: 0;
+}
+
+.menu a {
+  color: white;
+  text-decoration: none; /* Remove sublinhado */
+  font-weight: bold;
+}
+
+.menu a:hover {
+  text-decoration: underline; /* Sublinha no hover */
+}
+
+/* Seções */
+section {
+  margin-bottom: 2rem;
+  padding: 2rem;
+  background-color: rgba(0, 0, 0, 0.3); /* Fundo semitransparente */
+  border-radius: 10px;
+  border-bottom: 10px solid rgba(0, 0, 0, 0.3); /* Linha na parte inferior */
+}
+
+.centralizado {
+  text-align: center; /* Centraliza o texto */
+}
+
+/* Estilização do Perfil */
+.about {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap; /* Permite que os itens se ajustem em telas menores */
+}
+
+#FotoPerfil {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%; /* Torna a imagem circular */
+  display: block;
+}
+
+.about-info {
+  line-height: 1.6;
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+  .menu ul {
+      flex-direction: column; /* Coloca os itens do menu em coluna */
+      align-items: center;
+      gap: 10px;
+  }
+
+  .about {
+      flex-direction: column; /* Alinha as informações do perfil em coluna */
+      text-align: center;
+  }
+
+  #FotoPerfil {
+      width: 120px;
+      height: 120px;
+  }
+
+  section {
+      padding: 1rem; /* Reduz o padding das seções */
+  }
+
+  main {
+      width: 100%; /* Torna o main responsivo */
+      padding: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  #FotoPerfil {
+      width: 100px;
+      height: 100px;
+  }
+
+  .menu ul {
+      gap: 5px;
+  }
+
+  h2 {
+      font-size: 1.2rem; /* Reduz o tamanho do título */
+  }
+}
